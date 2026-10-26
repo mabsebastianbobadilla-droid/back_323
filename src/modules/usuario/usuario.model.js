@@ -7,5 +7,14 @@ export const UserModel = {
     const [rows] = await db.query(sql);
     return rows;
   },
+
+  findById: async (id) => {
+    const sql = "SELECT * FROM usuario WHERE id_usuario=?";
+    //almacenamos la respuesta en un arreglo
+    const [rows] = await db.query(sql, [id]);
+    return rows;
+  },
 };
+
+
 

@@ -11,3 +11,18 @@ export const obtenerUsuarios = async (req, res) => {
     });
   }
 };
+
+export const obtenerUsuariosid = async (req, res) => {
+  // codigo protegido con try..catch
+  try {
+    const id = req.params.id || req.params.id_usuario;
+    const results = await UserModel.findById(id);
+    res.json({ results });
+  } catch (error) {
+    res.status(500).json({
+      error: `error al listar : ${error}`,
+    });
+  }
+};
+
+export const getUserById = obtenerUsuariosid;

@@ -7,5 +7,7 @@ import * as usuarioCtr from "./usuario.controller.js";
 const router = Router(); //uso el metodo Router() de express para crear la ruta
 //la ruta tiene dos parametros la ruta en si misma y la que lo resuelve
 router.get("/usuarios", usuarioCtr.obtenerUsuarios);
+router.get("/usuarios/:id", usuarioCtr.obtenerUsuariosid);
 
 export default router;
+
